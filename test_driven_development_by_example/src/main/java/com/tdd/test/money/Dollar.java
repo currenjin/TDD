@@ -11,4 +11,8 @@ public class Dollar {
     public Dollar times(int multipler) {
         return new Dollar(amount * multipler);
     }
+
+    public boolean equals(Dollar dollar) {
+        return amount == dollar.amount;
+    }
 }

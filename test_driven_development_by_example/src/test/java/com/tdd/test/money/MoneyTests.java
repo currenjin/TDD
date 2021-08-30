@@ -9,15 +9,15 @@ public class MoneyTests {
     @Test
     public void testMultiplication() {
         Dollar five = new Dollar(5);
-        assertEquals(new Dollar(10), five.times(2));
-        assertEquals(new Dollar(15), five.times(3));
+        assertTrue(new Dollar(10).equals(five.times(2)));
+        assertTrue(new Dollar(15).equals(five.times(3)));
     }
 
     @Test
     public void testFrancMultiplication() {
         Franc five = new Franc(5);
-        assertEquals(new Franc(10), five.times(2));
-        assertEquals(new Franc(15), five.times(3));
+        assertTrue(new Franc(10).equals(five.times(2)));
+        assertTrue(new Franc(15).equals(five.times(3)));
     }
 
     @Test

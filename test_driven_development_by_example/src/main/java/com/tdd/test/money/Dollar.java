@@ -1,12 +1,11 @@
 package com.tdd.test.money;
 
 public class Dollar extends Money {
-
-    public Dollar(int amount) {
-        this.amount = amount;
+    Dollar(int amount, String currency) {
+        super(amount, currency);
     }
 
     public Money times(int multipler) {
-        return new Dollar(amount * multipler);
+        return Money.dollar(amount * multipler);
     }
 }

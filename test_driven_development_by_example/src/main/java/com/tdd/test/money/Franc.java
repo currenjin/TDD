@@ -1,12 +1,11 @@
 package com.tdd.test.money;
 
 public class Franc extends Money {
-
-    public Franc(int amount) {
-        this.amount = amount;
+    Franc(int amount, String currency) {
+        super(amount, currency);
     }
 
     public Money times(int multipler) {
-        return new Franc(amount * multipler);
+        return Money.franc(amount * multipler);
     }
 }

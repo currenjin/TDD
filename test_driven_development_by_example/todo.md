@@ -35,12 +35,12 @@
 - [ ] Equal null
 - [ ] Equal object
 - [x] 5CHF * 2 = 10CHF
-- [ ] Dollar/Franc 중복
+- [x] Dollar/Franc 중복
 - [x] 공용 equals
 - [x] 공용 times
 - [x] Franc과 Dollar 비교하기
-- [ ] 통화?
-- [ ] testFrancMultiplication을 지워야 할까?
+- [x] 통화?
+- [x] testFrancMultiplication을 지워야 할까?
 
 ### Acceptance criteria
 - [ ] 통화가 다른 두 금액을 더해서 주어진 환율에 맞게 변한 금액을 결과로 얻을 수 있어야 한다.

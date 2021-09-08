@@ -1,6 +1,6 @@
 package com.tdd.test.money;
 
-class Money {
+class Money implements Expression{
     protected int amount;
     protected String currency;
 
@@ -30,4 +30,8 @@ class Money {
     Money times(int amount) {
         return null;
     };
+
+    Expression plus(Money addend) {
+        return new Money(amount + addend.amount, currency);
+    }
 }

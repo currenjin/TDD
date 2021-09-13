@@ -27,11 +27,11 @@ class Money implements Expression{
                 && currency().equals(money.currency());
     }
 
-    Money times(int amount) {
+    Expression times(int amount) {
         return null;
     };
 
-    Expression plus(Money addend) {
+    public Expression plus(Expression addend) {
         return new Sum(this, addend);
     }
 

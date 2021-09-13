@@ -31,8 +31,8 @@
 - [x] Bank.reduce(Money)
 - [x] Money 에 대한 통화 변환을 수행하는 Reduce
 - [x] Reduce(Bank, String)
-- [ ] Sum.plus
-- [ ] Expression.times
+- [x] Sum.plus
+- [x] Expression.times
 - [x] $5 x 2 = $10
 - [x] amount를 private으로 만들기
 - [x] Dollar 부작용(side effect)?

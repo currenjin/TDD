@@ -8,8 +8,9 @@ hashCode()<br>
 Equal null<br>
 Equal object<br>
 ~~**5CHF x 2 = 10CHF**~~<br>
-Dollar/Franc 중복<br>
+**Dollar/Franc 중복**<br>
 ~~**공용 equals**~~<br>
 공용 times<br>
 ~~**Franc과 Dollar 비교하기**~~<br>
 통화?<br>
+testFrancMultiplication을 지워야 할까?<br>

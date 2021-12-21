@@ -9,5 +9,5 @@ Equal null<br>
 Equal object<br>
 ~~**5CHF x 2 = 10CHF**~~<br>
 Dollar/Franc 중복<br>
-공용 equals<br>
+~~**공용 equals**~~<br>
 공용 times<br>

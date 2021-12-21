@@ -11,3 +11,5 @@ Equal object<br>
 Dollar/Franc 중복<br>
 ~~**공용 equals**~~<br>
 공용 times<br>
+~~**Franc과 Dollar 비교하기**~~<br>
+통화?<br>

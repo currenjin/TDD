@@ -1,6 +1,6 @@
 package com.challenge.tdd;
 
-public class Money {
+public class Money implements Expression {
 
     protected int amount;
     protected String currency;
@@ -33,5 +33,9 @@ public class Money {
 
     public String currency() {
         return currency;
+    }
+
+    public Expression plus(Money addend) {
+        return new Money(amount + addend.amount, currency);
     }
 }

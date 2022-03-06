@@ -1,6 +1,9 @@
 # TDD
 Test-Driven Development
 
+## 정리 문서
+[개인 위키]https://currenjin.github.io/wiki/TDD/
+
 ## CYCLE
 1. 작은 테스트를 하나 추가한다.
 2. 모든 테스트를 실행해서 테스트가 실패하는 것을 확인한다.

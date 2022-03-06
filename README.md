@@ -10,7 +10,7 @@ Test-Driven Development
 
 ## Personal Document
 - [TDD with currenjin's wiki](https://currenjin.github.io/wiki/TDD/)
-- [테스트에 관한 나의 생각(1일 1글)](https://currenjin.github.io/wiki/think_of_test/)
+- [테스트에 관한 나의 생각(1일 1글)](https://currenjin.github.io/wiki/test/)
 
 ## ETC
 - [의존성과 중복](./etc/dependency_and_duplication.md)

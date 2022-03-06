@@ -2,7 +2,7 @@
 Test-Driven Development
 
 ## 정리 문서
-[개인 위키]https://currenjin.github.io/wiki/TDD/
+[개인 위키](https://currenjin.github.io/wiki/TDD/)
 
 ## CYCLE
 1. 작은 테스트를 하나 추가한다.

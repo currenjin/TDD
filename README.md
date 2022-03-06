@@ -1,8 +1,9 @@
 # TDD
 Test-Driven Development
 
-## 정리 문서
-[개인 위키](https://currenjin.github.io/wiki/TDD/)
+## Personal Document
+- [TDD with currenjin's wiki](https://currenjin.github.io/wiki/TDD/)
+- [테스트에 관한 나의 생각(1일 1글)](https://currenjin.github.io/wiki/think_of_test/)
 
 ## CYCLE
 1. 작은 테스트를 하나 추가한다.
@@ -13,5 +14,3 @@ Test-Driven Development
 
 ## ETC
 - [의존성과 중복](./etc/dependency_and_duplication.md)
-- [테스트에 관한 나의 생각(1일 1글)](https://currenjin.github.io/wiki/think_of_test/)
-- [TDD with currenjin's wiki](https://currenjin.github.io/wiki/TDD/)

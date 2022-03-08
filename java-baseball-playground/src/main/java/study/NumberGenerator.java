@@ -1,15 +1,19 @@
 package study;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Random;
+import java.util.Set;
 
 public class NumberGenerator {
-    Random random = new Random();
-
     public List<Integer> generate(int size, int start, int end) {
-        List<Integer> numbers = new ArrayList<>();
-        random.ints(size, start, end).forEach(number -> numbers.add(number));
-        return numbers;
+        Set<Integer> set = new HashSet<>();
+
+        while (set.size() < size) {
+            Double d = Math.random() * end + start;
+            set.add(d.intValue());
+        }
+
+        return new ArrayList<>(set);
     }
 }

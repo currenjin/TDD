@@ -7,6 +7,8 @@ public class Ball {
     private final int ballNo;
 
     public Ball(int position, int ballNo) {
+        Validator.validNo(ballNo);
+
         this.position = position;
         this.ballNo = ballNo;
     }

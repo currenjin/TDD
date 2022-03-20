@@ -1,13 +1,11 @@
 package com.tdd.util.spec;
 
-import com.tdd.domain.ScheduleTriggerRuleMatchCondition;
+public class AndCondition implements Condition {
 
-public class AndCondition implements ScheduleTriggerRuleMatchCondition {
+    private final Condition left;
+    private final Condition right;
 
-    private final ScheduleTriggerRuleMatchCondition left;
-    private final ScheduleTriggerRuleMatchCondition right;
-
-    public AndCondition(ScheduleTriggerRuleMatchCondition left, ScheduleTriggerRuleMatchCondition right) {
+    public AndCondition(Condition left, Condition right) {
         this.left = left;
         this.right = right;
     }

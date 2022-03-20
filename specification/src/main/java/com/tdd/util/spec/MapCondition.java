@@ -1,12 +1,10 @@
 package com.tdd.util.spec;
 
-import com.tdd.domain.ScheduleTriggerRuleMatchCondition;
-
 import java.util.Map;
 
-public class MapCondition implements ScheduleTriggerRuleMatchCondition {
+public class MapCondition implements Condition {
 
-    public static ScheduleTriggerRuleMatchCondition expected(String expectedKey, String expectedValue) {
+    public static Condition expected(String expectedKey, String expectedValue) {
         return new MapCondition(expectedKey, expectedValue);
     }
 

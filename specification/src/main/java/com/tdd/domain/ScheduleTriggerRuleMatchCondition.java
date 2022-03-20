@@ -1,11 +1,8 @@
 package com.tdd.domain;
 
-import com.tdd.util.spec.MapCondition;
+import com.tdd.util.spec.Condition;
 
-public interface ScheduleTriggerRuleMatchCondition {
-    static ScheduleTriggerRuleMatchCondition expected(String expectedKey, String expectedValue) {
-        return new MapCondition(expectedKey, expectedValue);
-    }
+public interface ScheduleTriggerRuleMatchCondition extends Condition {
 
     boolean isSatisfy(Object object);
 }

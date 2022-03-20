@@ -6,6 +6,10 @@ import java.util.Map;
 
 public class MapCondition implements ScheduleTriggerRuleMatchCondition {
 
+    public static ScheduleTriggerRuleMatchCondition expected(String expectedKey, String expectedValue) {
+        return new MapCondition(expectedKey, expectedValue);
+    }
+
     private final String expectedKey;
     private final String expectedValue;
 

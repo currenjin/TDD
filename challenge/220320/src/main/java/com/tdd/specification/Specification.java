@@ -1,4 +1,5 @@
 package com.tdd.specification;
 
-public class Specification {
+public interface Specification {
+    boolean isSatisfy(Object object);
 }

@@ -11,7 +11,7 @@ public class ScheduleTriggerRuleMatchPolicy {
 
     public Optional<ScheduleGroup> createScheduleGroup(Object object) {
         if (condition.isSatisfy(object)) {
-            return Optional.of(new ScheduleGroup());
+            return Optional.ofNullable(rule.createScheduleGroup(object));
         }
 
         return Optional.empty();

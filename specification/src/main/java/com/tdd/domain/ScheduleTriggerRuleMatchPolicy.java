@@ -1,13 +1,19 @@
 package com.tdd.domain;
 
+import lombok.RequiredArgsConstructor;
+
 import java.util.Optional;
 
+@RequiredArgsConstructor
 public class ScheduleTriggerRuleMatchPolicy {
-    public ScheduleTriggerRuleMatchPolicy(ScheduleTriggerRuleMatchCondition condition, ScheduleTriggerRule rule) {
-
-    }
+    private final ScheduleTriggerRuleMatchCondition condition;
+    private final ScheduleTriggerRule rule;
 
     public Optional<ScheduleGroup> createScheduleGroup(Object object) {
-        return null;
+        if (condition.isSatisfy(object)) {
+            return Optional.of(new ScheduleGroup());
+        }
+
+        return Optional.empty();
     }
 }

@@ -1,4 +1,6 @@
-package com.tdd.domain;
+package com.tdd.util.spec;
+
+import com.tdd.domain.ScheduleTriggerRuleMatchCondition;
 
 import java.util.Map;
 

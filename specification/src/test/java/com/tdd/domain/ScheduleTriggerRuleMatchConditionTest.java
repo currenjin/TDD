@@ -1,5 +1,6 @@
 package com.tdd.domain;
 
+import com.tdd.util.spec.AndCondition;
 import org.assertj.core.util.Maps;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

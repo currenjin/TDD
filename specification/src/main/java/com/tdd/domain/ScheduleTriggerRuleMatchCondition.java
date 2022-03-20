@@ -1,9 +1,11 @@
 package com.tdd.domain;
 
+import com.tdd.util.spec.MapCondition;
+
 public interface ScheduleTriggerRuleMatchCondition {
-    public static ScheduleTriggerRuleMatchCondition expected(String expectedKey, String expectedValue) {
+    static ScheduleTriggerRuleMatchCondition expected(String expectedKey, String expectedValue) {
         return new MapCondition(expectedKey, expectedValue);
     }
 
-    public boolean isSatisfy(Object object);
+    boolean isSatisfy(Object object);
 }

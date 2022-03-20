@@ -1,6 +1,8 @@
-package com.tdd.domain;
+package com.tdd.util.spec;
 
-class AndCondition implements ScheduleTriggerRuleMatchCondition {
+import com.tdd.domain.ScheduleTriggerRuleMatchCondition;
+
+public class AndCondition implements ScheduleTriggerRuleMatchCondition {
 
     private final ScheduleTriggerRuleMatchCondition left;
     private final ScheduleTriggerRuleMatchCondition right;

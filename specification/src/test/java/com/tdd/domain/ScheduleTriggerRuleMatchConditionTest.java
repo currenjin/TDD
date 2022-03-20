@@ -20,19 +20,16 @@ class ScheduleTriggerRuleMatchConditionTest {
         assertThat(expected("jar", "foo").isSatisfy(map)).isTrue();
     }
 
-    public static class ABC {
-        public boolean isSatisfy(Map<String, Object> factor) {
-            return expected("name", "foo").isSatisfy(factor)
-                    && expected("age", "18").isSatisfy(factor);
-        }
-    }
-
     @Test
     @DisplayName("is satisfied for multiple condition")
     void multiple_condition() {
-        Map<String, Object> map = Maps.newHashMap("name", "foo");
-        map.put("age", "18");
+        Map<String, Object> factor = Maps.newHashMap("name", "foo");
+        AndCondition sut = new AndCondition(expected("name", "foo"),
+                expected("age", "18"));
 
-        assertThat(new ABC().isSatisfy(map)).isTrue();
+        assertThat(sut.isSatisfy(factor)).isFalse();
+
+        factor.put("age", "18");
+        assertThat(sut.isSatisfy(factor)).isTrue();
     }
 }

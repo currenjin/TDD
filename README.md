@@ -1,7 +1,7 @@
 # TDD
 Test Driven Development
 
-## Project
+## PROJECT
 ### Test driven development by Example
 켄트벡의 <TDD by example> 중 Money 예제를 TDD 로 구현한 프로젝트입니다.
 

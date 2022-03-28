@@ -3,7 +3,7 @@ Test Driven Development
 
 ## PROJECT
 ### Test driven development by Example
-켄트벡의 <TDD by example> 중 Money 예제를 TDD 로 구현한 프로젝트입니다.
+켄트벡의 TDD by example 중 Money 예제를 TDD 로 구현한 프로젝트입니다.
 
 ### Java baseball playground
 숫자야구게임을 TDD 로 구현한 프로젝트입니다.

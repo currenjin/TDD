@@ -24,7 +24,7 @@ Specification pattern 을 TDD 로 구현한 프로젝트입니다.
 ### Challenge
 이미 TDD 로 진행했던 프로젝트에 대해 반복해서 TDD 로 구현하는 공간입니다.
 
-## Personal Document
+## PERSONAL
 - [TDD with currenjin's wiki](https://currenjin.github.io/wiki/TDD/)
 - [테스트에 관한 나의 생각(1일 1글)](https://currenjin.github.io/wiki/test/)
 

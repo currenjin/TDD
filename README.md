@@ -27,6 +27,9 @@ Specification pattern 을 TDD 로 구현한 프로젝트입니다.
 ### Keplers Second Law(TODO)
 케플러 제 2법칙, 면적 속도 일정의 법칙을 TDD 로 구현한 프로젝트입니다.
 
+### Keplers Third Law(TODO)
+케플러 제 3법칙, 조화의 법칙을 TDD 로 구현한 프로젝트입니다.
+
 ### Challenge
 이미 TDD 로 진행했던 프로젝트에 대해 반복해서 TDD 로 구현하는 공간입니다.
 

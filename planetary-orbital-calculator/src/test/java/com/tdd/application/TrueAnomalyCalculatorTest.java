@@ -1,6 +1,6 @@
-package com.tdd;
+package com.tdd.application;
 
-import com.tdd.utils.TimeFreezer;
+import com.tdd.util.TimeFreezer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 

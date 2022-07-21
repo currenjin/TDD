@@ -1,4 +1,4 @@
-package com.tdd;
+package com.tdd.application;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package com.tdd;
+package com.tdd.domain;
 
 import com.tdd.planet.EARTH;
 import org.junit.jupiter.api.Test;

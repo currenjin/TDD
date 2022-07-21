@@ -1,6 +1,8 @@
-package com.tdd;
+package com.tdd.application;
 
-import com.tdd.utils.JulianClock;
+import com.tdd.domain.Orbit;
+import com.tdd.domain.PlanetOrbit;
+import com.tdd.util.JulianClock;
 
 public class CurrentOrbitCalculator {
 

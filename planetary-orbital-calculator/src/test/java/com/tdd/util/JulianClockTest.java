@@ -1,8 +1,8 @@
-package com.tdd.utils;
+package com.tdd.util;
 
 import org.junit.jupiter.api.Test;
 
-import static com.tdd.utils.TimeConstant.J2000;
+import static com.tdd.util.TimeConstant.J2000;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class JulianClockTest {

@@ -1,4 +1,4 @@
-package com.tdd;
+package com.tdd.application;
 
 public class ArgumentOfPeriapsisCalculator {
     public static double calculate(Double perihelionLongitude, Double longitudeOfAscendingNode) {

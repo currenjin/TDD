@@ -1,4 +1,4 @@
-package com.tdd;
+package com.tdd.domain;
 
 public class Orbit {
     public static Orbit of(Double longRadius,

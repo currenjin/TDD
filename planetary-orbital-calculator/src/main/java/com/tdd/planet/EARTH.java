@@ -1,6 +1,6 @@
 package com.tdd.planet;
 
-import com.tdd.Orbit;
+import com.tdd.domain.Orbit;
 
 public class EARTH {
     public static final Double AU = 149597870.0;

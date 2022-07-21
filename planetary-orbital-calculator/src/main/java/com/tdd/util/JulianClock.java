@@ -1,4 +1,4 @@
-package com.tdd.utils;
+package com.tdd.util;
 
 import static java.time.ZoneOffset.UTC;
 

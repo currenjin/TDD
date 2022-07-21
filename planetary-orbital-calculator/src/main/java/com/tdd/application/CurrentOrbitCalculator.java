@@ -7,14 +7,12 @@ import com.tdd.util.JulianClock;
 public class CurrentOrbitCalculator {
 
     public static Orbit of(PlanetOrbit planetOrbit) {
-        double elapsedCentury = JulianClock.elapsedCentury();
-
-        double longRadius = planetOrbit.getLongRadius() + (planetOrbit.getChangePerCentury().getLongRadius() * elapsedCentury);
-        double eccentricity = planetOrbit.getEccentricity() + (planetOrbit.getChangePerCentury().getEccentricity() * elapsedCentury);
-        double inclination = planetOrbit.getInclination() + (planetOrbit.getChangePerCentury().getInclination() * elapsedCentury);
-        double longitudeOfAscendingNode = planetOrbit.getLongitudeOfAscendingNode() + (planetOrbit.getChangePerCentury().getLongitudeOfAscendingNode() * elapsedCentury);
-        double averageLongitude = planetOrbit.getAverageLongitude() + (planetOrbit.getChangePerCentury().getAverageLongitude() * elapsedCentury);
-        double perihelionLongitude = planetOrbit.getPerihelionLongitude() + (planetOrbit.getChangePerCentury().getPerihelionLongitude() * elapsedCentury);
+        double longRadius = getCurrentOrbitElement(planetOrbit.getLongRadius(), planetOrbit.getChangePerCentury().getLongRadius());
+        double eccentricity = getCurrentOrbitElement(planetOrbit.getEccentricity(), planetOrbit.getChangePerCentury().getEccentricity());
+        double inclination = getCurrentOrbitElement(planetOrbit.getInclination(), planetOrbit.getChangePerCentury().getInclination());
+        double longitudeOfAscendingNode = getCurrentOrbitElement(planetOrbit.getLongitudeOfAscendingNode(), planetOrbit.getChangePerCentury().getLongitudeOfAscendingNode());
+        double averageLongitude = getCurrentOrbitElement(planetOrbit.getAverageLongitude(), planetOrbit.getChangePerCentury().getAverageLongitude());
+        double perihelionLongitude = getCurrentOrbitElement(planetOrbit.getPerihelionLongitude(), planetOrbit.getChangePerCentury().getPerihelionLongitude());
 
         return Orbit.of(longRadius,
                 eccentricity,
@@ -22,5 +20,11 @@ public class CurrentOrbitCalculator {
                 longitudeOfAscendingNode,
                 averageLongitude,
                 perihelionLongitude);
+    }
+
+    private static double getCurrentOrbitElement(Double element, Double changePerCenturyByElement) {
+        double elapsedCentury = JulianClock.elapsedCentury();
+
+        return element + (changePerCenturyByElement * elapsedCentury);
     }
 }

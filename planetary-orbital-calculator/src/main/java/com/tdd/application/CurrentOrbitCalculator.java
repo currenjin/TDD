@@ -7,19 +7,13 @@ import com.tdd.util.JulianClock;
 public class CurrentOrbitCalculator {
 
     public static Orbit of(PlanetOrbit planetOrbit) {
-        double longRadius = getCurrentOrbitElement(planetOrbit.getLongRadius(), planetOrbit.getChangePerCentury().getLongRadius());
-        double eccentricity = getCurrentOrbitElement(planetOrbit.getEccentricity(), planetOrbit.getChangePerCentury().getEccentricity());
-        double inclination = getCurrentOrbitElement(planetOrbit.getInclination(), planetOrbit.getChangePerCentury().getInclination());
-        double longitudeOfAscendingNode = getCurrentOrbitElement(planetOrbit.getLongitudeOfAscendingNode(), planetOrbit.getChangePerCentury().getLongitudeOfAscendingNode());
-        double averageLongitude = getCurrentOrbitElement(planetOrbit.getAverageLongitude(), planetOrbit.getChangePerCentury().getAverageLongitude());
-        double perihelionLongitude = getCurrentOrbitElement(planetOrbit.getPerihelionLongitude(), planetOrbit.getChangePerCentury().getPerihelionLongitude());
 
-        return Orbit.of(longRadius,
-                eccentricity,
-                inclination,
-                longitudeOfAscendingNode,
-                averageLongitude,
-                perihelionLongitude);
+        return Orbit.of(getCurrentOrbitElement(planetOrbit.getLongRadius(), planetOrbit.getChangePerCentury().getLongRadius()),
+                getCurrentOrbitElement(planetOrbit.getEccentricity(), planetOrbit.getChangePerCentury().getEccentricity()),
+                getCurrentOrbitElement(planetOrbit.getInclination(), planetOrbit.getChangePerCentury().getInclination()),
+                getCurrentOrbitElement(planetOrbit.getLongitudeOfAscendingNode(), planetOrbit.getChangePerCentury().getLongitudeOfAscendingNode()),
+                getCurrentOrbitElement(planetOrbit.getAverageLongitude(), planetOrbit.getChangePerCentury().getAverageLongitude()),
+                getCurrentOrbitElement(planetOrbit.getPerihelionLongitude(), planetOrbit.getChangePerCentury().getPerihelionLongitude()));
     }
 
     private static double getCurrentOrbitElement(Double element, Double changePerCenturyByElement) {

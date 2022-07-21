@@ -4,15 +4,15 @@ import static java.time.ZoneOffset.UTC;
 
 public class JulianClock {
 
-    public long elapsedDate() {
+    public static long elapsedDate() {
         return getEpochTime() / TimeConstant.DAY;
     }
 
-    public double elapsedCentury() {
+    public static double elapsedCentury() {
         return elapsedDate() / TimeConstant.CENTURY;
     }
 
-    private long getEpochTime() {
+    private static long getEpochTime() {
         return Clocks.now().toEpochSecond(UTC) - TimeConstant.J2000.toEpochSecond(UTC);
     }
 }

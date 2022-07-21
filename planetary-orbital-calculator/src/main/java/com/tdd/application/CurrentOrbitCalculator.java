@@ -7,8 +7,7 @@ import com.tdd.util.JulianClock;
 public class CurrentOrbitCalculator {
 
     public static Orbit of(PlanetOrbit planetOrbit) {
-        JulianClock julianClock = new JulianClock();
-        double elapsedCentury = julianClock.elapsedCentury();
+        double elapsedCentury = JulianClock.elapsedCentury();
 
         double longRadius = planetOrbit.getLongRadius() + (planetOrbit.getChangePerCentury().getLongRadius() * elapsedCentury);
         double eccentricity = planetOrbit.getEccentricity() + (planetOrbit.getChangePerCentury().getEccentricity() * elapsedCentury);

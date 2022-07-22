@@ -1,6 +1,6 @@
 package com.tdd.application;
 
-public class TrueAnomalyCalculator {
+public class EccentricityAnomalyCalculator {
 
     public static double calculate(Double eccentricity, Double averageLongitude, Double perihelionLongitude) {
         validate(eccentricity, averageLongitude, perihelionLongitude);

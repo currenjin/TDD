@@ -47,22 +47,7 @@ public class PlanetaryPositionCalculatorTest {
     }
 
     @Test
-    void 역기점의_황도_좌표값() {
-        TimeFreezer.freeze(EPOCH_TIME);
-
-        EclipticCoordinate actual = PlanetaryPositionCalculator.calculateEclipticCoordinate(PLANET);
-
-        assertThat(actual.getX()).isEqualTo(X_OF_EPOCH_TIME);
-        assertThat(actual.getY()).isEqualTo(Y_OF_EPOCH_TIME);
-    }
-
-    @Test
     void 행성의_위치를_가져올_때_유효하지_않은_값이면_안된다() {
         assertThatThrownBy(() -> PlanetaryPositionCalculator.position(null)).isInstanceOf(IllegalArgumentException.class);
-    }
-
-    @Test
-    void 황도_좌표값_계산시_유효하지_않은_값이면_안된다() {
-        assertThatThrownBy(() -> PlanetaryPositionCalculator.calculateEclipticCoordinate(null)).isInstanceOf(IllegalArgumentException.class);
     }
 }

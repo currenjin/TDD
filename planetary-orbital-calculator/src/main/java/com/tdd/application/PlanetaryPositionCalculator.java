@@ -27,15 +27,13 @@ public class PlanetaryPositionCalculator {
         return Math.sqrt(Math.pow(eclipticCoordinate.getX(), 2) + Math.pow(eclipticCoordinate.getY(), 2)) / (1000 * au);
     }
 
-    public static EclipticCoordinate calculateEclipticCoordinate(PlanetOrbit planet) {
-
-        validatePlanetOrbit(planet);
+    private static EclipticCoordinate calculateEclipticCoordinate(PlanetOrbit planet) {
 
         Orbit currentOrbit = CurrentOrbitCalculator.of(planet);
         double eccentricityAnomaly = EccentricityAnomalyCalculator.calculate(currentOrbit.getEccentricity(), currentOrbit.getAverageLongitude(), currentOrbit.getPerihelionLongitude());
 
-        double x = (planet.getLongRadius() * 1000) * (Math.cos(eccentricityAnomaly) - currentOrbit.getEccentricity());
-        double y = (planet.getLongRadius() * 1000) * (Math.sqrt(1 - (currentOrbit.getEccentricity() * currentOrbit.getEccentricity()))) * Math.sin(eccentricityAnomaly);
+        double x = (currentOrbit.getLongRadius() * 1000) * (Math.cos(eccentricityAnomaly) - currentOrbit.getEccentricity());
+        double y = (currentOrbit.getLongRadius() * 1000) * (Math.sqrt(1 - (currentOrbit.getEccentricity() * currentOrbit.getEccentricity()))) * Math.sin(eccentricityAnomaly);
 
         return new EclipticCoordinate(x, y);
     }

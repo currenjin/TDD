@@ -3,8 +3,17 @@ package com.tdd.application;
 import com.tdd.domain.EclipticCoordinate;
 import com.tdd.domain.Orbit;
 import com.tdd.domain.PlanetOrbit;
+import com.tdd.domain.PlanetaryPosition;
 
 public class PlanetaryPositionCalculator {
+
+    public static PlanetaryPosition position(PlanetOrbit planet) {
+
+        double euclideanDistance = calculateEuclideanDistance(planet);
+        double trueAnomaly = calculateTrueAnomaly(planet);
+
+        return PlanetaryPosition.of(euclideanDistance, trueAnomaly);
+    }
 
     public static double calculateTrueAnomaly(PlanetOrbit planet) {
 

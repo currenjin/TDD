@@ -2,6 +2,7 @@ package com.tdd.application;
 
 import com.tdd.domain.EclipticCoordinate;
 import com.tdd.domain.PlanetOrbit;
+import com.tdd.domain.PlanetaryPosition;
 import com.tdd.planet.EARTH;
 import com.tdd.util.TimeFreezer;
 import org.junit.jupiter.api.AfterEach;
@@ -32,6 +33,17 @@ public class PlanetaryPositionCalculatorTest {
     @AfterEach
     void tearDown() {
         TimeFreezer.rollback();
+    }
+
+
+    @Test
+    void 역기점의_행성의_위치를_가져옵니다() {
+        TimeFreezer.freeze(EPOCH_TIME);
+
+        PlanetaryPosition actual = PlanetaryPositionCalculator.position(PLANET);
+
+        assertThat(actual.getEuclideanDistance()).isEqualTo(EUCLIDEAN_DISTANCE_OF_EPOCH_TIME);
+        assertThat(actual.getTrueAnomaly()).isEqualTo(TRUE_ANOMALY_OF_EPOCH_TIME);
     }
 
     @Test

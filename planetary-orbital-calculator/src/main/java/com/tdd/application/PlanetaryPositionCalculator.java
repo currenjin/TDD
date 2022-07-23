@@ -35,7 +35,7 @@ public class PlanetaryPositionCalculator {
         double x = (currentOrbit.getLongRadius() * 1000) * (Math.cos(eccentricityAnomaly) - currentOrbit.getEccentricity());
         double y = (currentOrbit.getLongRadius() * 1000) * (Math.sqrt(1 - (currentOrbit.getEccentricity() * currentOrbit.getEccentricity()))) * Math.sin(eccentricityAnomaly);
 
-        return new EclipticCoordinate(x, y);
+        return EclipticCoordinate.of(x, y);
     }
 
     private static void validatePlanetOrbit(PlanetOrbit planet) {

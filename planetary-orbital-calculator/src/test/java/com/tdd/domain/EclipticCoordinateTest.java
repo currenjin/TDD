@@ -11,7 +11,7 @@ class EclipticCoordinateTest {
 
     @Test
     void 황도_좌표를_생성합니다() {
-        EclipticCoordinate actual = new EclipticCoordinate(X, Y);
+        EclipticCoordinate actual = EclipticCoordinate.of(X, Y);
 
         assertThat(actual.getX()).isEqualTo(X);
         assertThat(actual.getY()).isEqualTo(Y);

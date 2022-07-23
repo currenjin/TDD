@@ -1,6 +1,5 @@
 package com.tdd.application;
 
-import com.tdd.domain.EclipticCoordinate;
 import com.tdd.domain.PlanetOrbit;
 import com.tdd.domain.PlanetaryPosition;
 import com.tdd.planet.EARTH;
@@ -16,8 +15,6 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 public class PlanetaryPositionCalculatorTest {
 
     private static final LocalDateTime EPOCH_TIME = LocalDateTime.of(2000, 1, 1, 12, 0, 0);
-    public static final double X_OF_EPOCH_TIME = 1.4694932560460544E11;
-    public static final double Y_OF_EPOCH_TIME = -6.6734438045969925E9;
     public static final double TRUE_ANOMALY_OF_EPOCH_TIME = -2.600199987674757;
     public static final double EUCLIDEAN_DISTANCE_OF_EPOCH_TIME = 0.9833079767952526;
 

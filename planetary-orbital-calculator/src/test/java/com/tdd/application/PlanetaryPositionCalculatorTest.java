@@ -75,6 +75,11 @@ public class PlanetaryPositionCalculatorTest {
     }
 
     @Test
+    void 행성의_위치를_가져올_때_유효하지_않은_값이면_안된다() {
+        assertThatThrownBy(() -> PlanetaryPositionCalculator.position(null)).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
     void 유클리드_거리_계산시_유효하지_않은_값이면_안된다() {
         assertThatThrownBy(() -> PlanetaryPositionCalculator.calculateEuclideanDistance(null)).isInstanceOf(IllegalArgumentException.class);
     }

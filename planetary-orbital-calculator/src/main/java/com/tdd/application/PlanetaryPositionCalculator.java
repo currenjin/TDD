@@ -9,6 +9,8 @@ public class PlanetaryPositionCalculator {
 
     public static PlanetaryPosition position(PlanetOrbit planet) {
 
+        validatePlanetOrbit(planet);
+
         double euclideanDistance = calculateEuclideanDistance(planet);
         double trueAnomaly = calculateTrueAnomaly(planet);
 

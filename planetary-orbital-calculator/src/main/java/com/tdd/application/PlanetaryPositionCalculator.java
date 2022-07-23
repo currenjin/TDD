@@ -12,7 +12,8 @@ public class PlanetaryPositionCalculator {
         validatePlanetOrbit(planet);
 
         EclipticCoordinate eclipticCoordinate = calculateEclipticCoordinate(planet);
-        double euclideanDistance = calculateEuclideanDistance(planet);
+
+        double euclideanDistance = calculateEuclideanDistance(eclipticCoordinate, planet.getAu());
         double trueAnomaly = calculateTrueAnomaly(eclipticCoordinate);
 
         return PlanetaryPosition.of(euclideanDistance, trueAnomaly);

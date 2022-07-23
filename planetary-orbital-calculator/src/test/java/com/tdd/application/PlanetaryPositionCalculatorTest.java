@@ -57,22 +57,8 @@ public class PlanetaryPositionCalculatorTest {
     }
 
     @Test
-    void 역기점의_유클리드_거리를_계산한다() {
-        TimeFreezer.freeze(EPOCH_TIME);
-
-        double actual = PlanetaryPositionCalculator.calculateEuclideanDistance(PLANET);
-
-        assertThat(actual).isEqualTo(EUCLIDEAN_DISTANCE_OF_EPOCH_TIME);
-    }
-
-    @Test
     void 행성의_위치를_가져올_때_유효하지_않은_값이면_안된다() {
         assertThatThrownBy(() -> PlanetaryPositionCalculator.position(null)).isInstanceOf(IllegalArgumentException.class);
-    }
-
-    @Test
-    void 유클리드_거리_계산시_유효하지_않은_값이면_안된다() {
-        assertThatThrownBy(() -> PlanetaryPositionCalculator.calculateEuclideanDistance(null)).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test

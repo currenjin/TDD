@@ -11,28 +11,19 @@ public class PlanetaryPositionCalculator {
 
         validatePlanetOrbit(planet);
 
+        EclipticCoordinate eclipticCoordinate = calculateEclipticCoordinate(planet);
         double euclideanDistance = calculateEuclideanDistance(planet);
-        double trueAnomaly = calculateTrueAnomaly(planet);
+        double trueAnomaly = calculateTrueAnomaly(eclipticCoordinate);
 
         return PlanetaryPosition.of(euclideanDistance, trueAnomaly);
     }
 
-    public static double calculateTrueAnomaly(PlanetOrbit planet) {
-
-        validatePlanetOrbit(planet);
-
-        EclipticCoordinate eclipticCoordinate = calculateEclipticCoordinate(planet);
-
+    private static double calculateTrueAnomaly(EclipticCoordinate eclipticCoordinate) {
         return Math.atan2(eclipticCoordinate.getY(), eclipticCoordinate.getX()) * (180 / Math.PI);
     }
 
-    public static double calculateEuclideanDistance(PlanetOrbit planet) {
-
-        validatePlanetOrbit(planet);
-
-        EclipticCoordinate eclipticCoordinate = calculateEclipticCoordinate(planet);
-
-        return Math.sqrt(Math.pow(eclipticCoordinate.getX(), 2) + Math.pow(eclipticCoordinate.getY(), 2)) / (1000 * planet.getAu());
+    private static double calculateEuclideanDistance(EclipticCoordinate eclipticCoordinate, double au) {
+        return Math.sqrt(Math.pow(eclipticCoordinate.getX(), 2) + Math.pow(eclipticCoordinate.getY(), 2)) / (1000 * au);
     }
 
     public static EclipticCoordinate calculateEclipticCoordinate(PlanetOrbit planet) {

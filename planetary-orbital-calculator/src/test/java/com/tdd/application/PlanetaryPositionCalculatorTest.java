@@ -57,15 +57,6 @@ public class PlanetaryPositionCalculatorTest {
     }
 
     @Test
-    void 역기점의_진근점_이각을_계산한다() {
-        TimeFreezer.freeze(EPOCH_TIME);
-
-        double actual = PlanetaryPositionCalculator.calculateTrueAnomaly(PLANET);
-
-        assertThat(actual).isEqualTo(TRUE_ANOMALY_OF_EPOCH_TIME);
-    }
-
-    @Test
     void 역기점의_유클리드_거리를_계산한다() {
         TimeFreezer.freeze(EPOCH_TIME);
 
@@ -87,10 +78,5 @@ public class PlanetaryPositionCalculatorTest {
     @Test
     void 황도_좌표값_계산시_유효하지_않은_값이면_안된다() {
         assertThatThrownBy(() -> PlanetaryPositionCalculator.calculateEclipticCoordinate(null)).isInstanceOf(IllegalArgumentException.class);
-    }
-
-    @Test
-    void 진근점_이각_계산시_유효하지_않은_값이면_안된다() {
-        assertThatThrownBy(() -> PlanetaryPositionCalculator.calculateTrueAnomaly(null)).isInstanceOf(IllegalArgumentException.class);
     }
 }

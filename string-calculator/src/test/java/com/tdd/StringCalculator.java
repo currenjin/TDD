@@ -5,16 +5,15 @@ import java.util.List;
 
 public class StringCalculator {
     public static Integer calculate(String string) {
-        if (string == null || string.isEmpty()) {
+        if (checkNullOrEmpty(string)) {
             return 0;
         }
 
-        List<String> numbers = Arrays.asList(string.split("[,:]"));
+        List<String> numbers = getSplitedNumbers(string);
 
-
-        return numbers.stream().mapToInt(s -> {
+        int total = numbers.stream().mapToInt(s -> {
             try {
-                if (s == null || s.isEmpty()) {
+                if (checkNullOrEmpty(s)) {
                     return 0;
                 }
 
@@ -25,9 +24,19 @@ public class StringCalculator {
                 }
 
                 return number;
-            } catch(Exception e) {
+            } catch (Exception e) {
                 throw new IllegalArgumentException(e.getMessage());
             }
         }).sum();
+
+        return total;
+    }
+
+    private static List<String> getSplitedNumbers(String string) {
+        return Arrays.asList(string.split("[,:]"));
+    }
+
+    private static Boolean checkNullOrEmpty(String s) {
+        return s == null || s.isEmpty();
     }
 }

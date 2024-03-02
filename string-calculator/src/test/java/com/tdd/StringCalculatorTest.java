@@ -16,6 +16,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 3. 문자열 계산기에 숫자 이외의 값 또는 음수를 전달하는 경우 RuntimeException 예외를 throw한다.
  */
 
+
+// TODO: 커스텀 구분자
 public class StringCalculatorTest {
     @Test
     void empty_is_zero() {

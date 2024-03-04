@@ -2,6 +2,7 @@ package com.tdd;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StringCalculator {
     public static Integer calculate(String string) {
@@ -9,34 +10,33 @@ public class StringCalculator {
             return 0;
         }
 
-        List<String> numbers = getSplitedNumbers(string);
+        List<Integer> numbers = splitNumbers(string);
 
-        int total = numbers.stream().mapToInt(s -> {
-            try {
-                if (checkNullOrEmpty(s)) {
-                    return 0;
-                }
+        if (numbers.size() == 1) {
+            return numbers.get(0);
+        }
 
-                int number = Integer.parseInt(s);
-
-                if (number < 0) {
-                    throw new Exception("number < 0");
-                }
-
-                return number;
-            } catch (Exception e) {
-                throw new IllegalArgumentException(e.getMessage());
-            }
-        }).sum();
-
-        return total;
+        return numbers.stream().reduce(0, Integer::sum);
     }
 
-    private static List<String> getSplitedNumbers(String string) {
-        return Arrays.asList(string.split("[,:]"));
+    private static List<Integer> splitNumbers(String string) {
+        List<String> splitedStringList = Arrays
+                .asList(string.split("[,:]"));
+        return splitedStringList
+                .stream()
+                .map(e -> {
+                    if (checkNullOrEmpty(e)) return 0;
+                    if (isMinusNumber(e)) throw new IllegalArgumentException();
+                    return Integer.parseInt(e);
+                })
+                .collect(Collectors.toList());
     }
 
     private static Boolean checkNullOrEmpty(String s) {
         return s == null || s.isEmpty();
+    }
+
+    private static Boolean isMinusNumber(String s) {
+        return Integer.parseInt(s) < 0;
     }
 }

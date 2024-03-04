@@ -20,8 +20,7 @@ public class StringCalculator {
     }
 
     private static List<Integer> splitNumbers(String string) {
-        List<String> splitedStringList = Arrays
-                .asList(string.split("[,:]"));
+        List<String> splitedStringList = splitBySeparator(string);
         return splitedStringList
                 .stream()
                 .map(e -> {
@@ -30,6 +29,11 @@ public class StringCalculator {
                     return Integer.parseInt(e);
                 })
                 .collect(Collectors.toList());
+    }
+
+    private static List<String> splitBySeparator(String string) {
+        String replacedString = string.replaceAll("//(.*?)\n", ",");
+        return Arrays.asList(replacedString.split("[,:]"));
     }
 
     private static Boolean checkNullOrEmpty(String s) {

@@ -83,6 +83,21 @@ public class StringCalculatorTest {
     }
 
     @Test
+    void one_custom_separator_two_is_three() {
+        Integer actual = StringCalculator.calculate("1//[\n2");
+
+        assertThat(actual).isEqualTo(3);
+    }
+
+//    TODO: 잘못된 걸 깨달았다. 맨 앞에 구분자를 정의하고 계속 쓰는 거였다
+//    @Test
+//    void custom_separator_one_colons_two_colons_is_six() {
+//        Integer actual = StringCalculator.calculate("//;\n1;2;3");
+//
+//        assertThat(actual).isEqualTo(6);
+//    }
+
+    @Test
     void has_a_non_integer_is_exception() {
         assertThatThrownBy(() -> StringCalculator.calculate("test"));
     }

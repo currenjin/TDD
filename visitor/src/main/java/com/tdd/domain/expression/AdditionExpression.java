@@ -1,8 +1,13 @@
 package com.tdd.domain.expression;
 
 public class AdditionExpression implements Expression {
-    private Expression left;
-    private Expression right;
+    public AdditionExpression(Expression left, Expression right) {
+        this.left = left;
+        this.right = right;
+    }
+
+    private final Expression left;
+    private final Expression right;
 
     @Override
     public int accept(ExpressionVisitor visitor) {

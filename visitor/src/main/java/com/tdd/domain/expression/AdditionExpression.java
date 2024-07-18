@@ -1,0 +1,11 @@
+package com.tdd.domain.expression;
+
+public class AdditionExpression implements Expression {
+    private Expression left;
+    private Expression right;
+
+    @Override
+    public int accept(ExpressionVisitor visitor) {
+        return visitor.visit(this);
+    }
+}

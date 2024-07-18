@@ -7,4 +7,8 @@ public class NumberExpression implements Expression {
     public int accept(ExpressionVisitor visitor) {
         return visitor.visit(this);
     }
+
+    public int getValue() {
+        return value;
+    }
 }

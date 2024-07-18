@@ -8,4 +8,12 @@ public class MultiplicationExpression implements Expression {
     public int accept(ExpressionVisitor visitor) {
         return visitor.visit(this);
     }
+
+    public Expression getLeft() {
+        return left;
+    }
+
+    public Expression getRight() {
+        return right;
+    }
 }

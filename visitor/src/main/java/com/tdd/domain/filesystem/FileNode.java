@@ -20,4 +20,8 @@ public class FileNode {
     public String getName() {
         return this.name;
     }
+
+    public int accept(FileSizeVisitor visitor) {
+        return visitor.visit(this);
+    }
 }

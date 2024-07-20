@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class FileSystemTest {
+public class FileSizeVisitorTest {
     FileSizeVisitor visitor = new FileSizeVisitor();
 
     @Test

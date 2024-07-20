@@ -18,4 +18,17 @@ public class FileSystemTest {
         assertEquals(1, firstSize);
         assertEquals(2, secondSize);
     }
+
+    @Test
+    void directory_accept() {
+        FileNode firstFile = new FileNode("file", 1);
+        FileNode secondFile = new FileNode("file", 2);
+        DirectoryNode directory = new DirectoryNode("directory");
+        directory.addChildren(firstFile);
+        directory.addChildren(secondFile);
+
+        int totalSize = directory.accept(visitor);
+
+        assertEquals(3, totalSize);
+    }
 }

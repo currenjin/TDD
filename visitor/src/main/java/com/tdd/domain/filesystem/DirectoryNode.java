@@ -1,8 +1,6 @@
 package com.tdd.domain.filesystem;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class DirectoryNode {
@@ -27,5 +25,9 @@ public class DirectoryNode {
 
     public void addChildren(FileNode file) {
         this.children.add(file);
+    }
+
+    public int accept(FileSystemVisitor visitor) {
+        return visitor.visit(this);
     }
 }

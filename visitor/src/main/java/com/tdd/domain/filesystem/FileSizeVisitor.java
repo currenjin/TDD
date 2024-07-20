@@ -5,4 +5,12 @@ public class FileSizeVisitor implements FileSystemVisitor {
     public int visit(FileNode node) {
         return node.getSize();
     }
+
+    @Override
+    public int visit(DirectoryNode directoryNode) {
+        return directoryNode.getChildren()
+                .stream()
+                .mapToInt(child -> child.accept(this))
+                .sum();
+    }
 }

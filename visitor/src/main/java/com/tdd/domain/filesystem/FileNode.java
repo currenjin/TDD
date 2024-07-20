@@ -21,7 +21,7 @@ public class FileNode {
         return this.name;
     }
 
-    public int accept(FileSizeVisitor visitor) {
+    public int accept(FileSystemVisitor visitor) {
         return visitor.visit(this);
     }
 }

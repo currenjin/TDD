@@ -45,4 +45,18 @@ public class DirectoryNodeTest {
         directory.addChildren(secondFile);
         assertEquals(2, directory.getChildren().size());
     }
+
+    @Test
+    void directory_has_directory_has_directory() {
+        DirectoryNode firstDirectory = new DirectoryNode("firstDirectory");
+        assertEquals(0, firstDirectory.getChildren().size());
+
+        DirectoryNode secondDirectory = new DirectoryNode("secondDirectory");
+        secondDirectory.addChildren(firstDirectory);
+        assertEquals(1, secondDirectory.getChildren().size());
+
+        DirectoryNode thirdDirectory = new DirectoryNode("thirdDirectory");
+        thirdDirectory.addChildren(secondDirectory);
+        assertEquals(1, thirdDirectory.getChildren().size());
+    }
 }

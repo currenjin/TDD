@@ -1,6 +1,6 @@
 package com.tdd.domain.filesystem;
 
-public class FileNode {
+public class FileNode implements FileSystemNode {
     private final int size;
     private final String name;
 
@@ -21,6 +21,7 @@ public class FileNode {
         return this.name;
     }
 
+    @Override
     public int accept(FileSystemVisitor visitor) {
         return visitor.visit(this);
     }

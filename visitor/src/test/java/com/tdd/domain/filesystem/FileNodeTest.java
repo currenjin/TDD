@@ -33,4 +33,9 @@ public class FileNodeTest {
     void name_cannot_be_empty() {
         assertThrows(IllegalArgumentException.class, () -> new FileNode("", 5));
     }
+
+    @Test
+    void size_cannot_be_negative() {
+        assertThrows(IllegalArgumentException.class, () -> new FileNode("", -1));
+    }
 }

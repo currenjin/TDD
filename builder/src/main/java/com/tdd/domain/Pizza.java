@@ -1,29 +1,29 @@
 package com.tdd.domain;
 
 public class Pizza {
-    private final int size;
+    private final PizzaSize size;
     private final boolean cheese;
     private final boolean peperoni;
 
-    public Pizza(int size) {
+    public Pizza(PizzaSize size) {
         this.size = size;
         this.cheese = false;
         this.peperoni = false;
     }
 
-    public Pizza(int size, boolean cheese) {
+    public Pizza(PizzaSize size, boolean cheese) {
         this.size = size;
         this.cheese = cheese;
         this.peperoni = false;
     }
 
-    public Pizza(int size, boolean cheese, boolean peperoni) {
+    public Pizza(PizzaSize size, boolean cheese, boolean peperoni) {
         this.size = size;
         this.cheese = cheese;
         this.peperoni = peperoni;
     }
 
-    public int getSize() {
+    public PizzaSize getSize() {
         return this.size;
     }
 

@@ -5,40 +5,36 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PizzaTest {
-
-    public static final int SMALL_SIZE = 4;
-    public static final int LARGE_SIZE = 8;
-
     @Test
     void pizza() {
-        Pizza smallPizza = new Pizza(SMALL_SIZE);
-        Pizza largePizza = new Pizza(LARGE_SIZE);
+        Pizza smallPizza = new Pizza(PizzaSize.SMALL);
+        Pizza largePizza = new Pizza(PizzaSize.LARGE);
 
-        assertEquals(SMALL_SIZE, smallPizza.getSize());
-        assertEquals(LARGE_SIZE, largePizza.getSize());
+        assertEquals(PizzaSize.SMALL, smallPizza.getSize());
+        assertEquals(PizzaSize.LARGE, largePizza.getSize());
     }
 
     @Test
     void pizza_with_cheese() {
-        Pizza pizza = new Pizza(SMALL_SIZE, true);
+        Pizza pizza = new Pizza(PizzaSize.SMALL, true);
         assertEquals(true, pizza.getCheese());
     }
 
     @Test
     void pizza_without_cheese() {
-        Pizza pizza = new Pizza(SMALL_SIZE, false);
+        Pizza pizza = new Pizza(PizzaSize.SMALL, false);
         assertEquals(false, pizza.getCheese());
     }
 
     @Test
     void pizza_with_peperoni() {
-        Pizza pizza = new Pizza(SMALL_SIZE, false, true);
+        Pizza pizza = new Pizza(PizzaSize.SMALL, false, true);
         assertEquals(true, pizza.getPeperoni());
     }
 
     @Test
     void pizza_without_peperoni() {
-        Pizza pizza = new Pizza(SMALL_SIZE, false, false);
+        Pizza pizza = new Pizza(PizzaSize.SMALL, false, false);
         assertEquals(false, pizza.getPeperoni());
     }
 }

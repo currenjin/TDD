@@ -2,7 +2,7 @@ package com.tdd.domain;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PizzaTest {
     @Test
@@ -17,24 +17,24 @@ public class PizzaTest {
     @Test
     void pizza_with_cheese() {
         Pizza pizza = new Pizza(PizzaSize.SMALL, true);
-        assertEquals(true, pizza.getCheese());
+        assertTrue(pizza.getCheese());
     }
 
     @Test
     void pizza_without_cheese() {
         Pizza pizza = new Pizza(PizzaSize.SMALL, false);
-        assertEquals(false, pizza.getCheese());
+        assertFalse(pizza.getCheese());
     }
 
     @Test
     void pizza_with_peperoni() {
         Pizza pizza = new Pizza(PizzaSize.SMALL, false, true);
-        assertEquals(true, pizza.getPeperoni());
+        assertTrue(pizza.getPeperoni());
     }
 
     @Test
     void pizza_without_peperoni() {
         Pizza pizza = new Pizza(PizzaSize.SMALL, false, false);
-        assertEquals(false, pizza.getPeperoni());
+        assertFalse(pizza.getPeperoni());
     }
 }

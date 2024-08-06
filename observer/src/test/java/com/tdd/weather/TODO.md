@@ -1,0 +1,3 @@
+- 날씨 데이터를 관리하는 WeatherData에는 온도(temperature), 습도(humidity), 기압(pressure)의 데이터를 가지고 있습니다.
+- 옵저버의 구현체는 Display 클래스이며, 날씨 정보가 업데이트될 때 해당 정보를 출력합니다.
+- 주제의 구현체는 SubjectImpl 클래스이며, 옵저버들을 등록, 해제, 알림 작업을 수행합니다.

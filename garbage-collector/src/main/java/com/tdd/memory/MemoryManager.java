@@ -2,6 +2,7 @@ package com.tdd.memory;
 
 import javax.swing.*;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class MemoryManager {
@@ -17,5 +18,13 @@ public class MemoryManager {
 
     public boolean isReferenced(Object obj) {
         return references.contains(obj);
+    }
+
+    public void removeReference(Object obj) {
+        references.remove(obj);
+    }
+
+    public void collectGarbage() {
+        references.removeIf(obj -> !isReferenced(obj));
     }
 }

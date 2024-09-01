@@ -1,6 +1,6 @@
 package com.tdd.domain.filesystem;
 
-public class FileNode {
+public class FileNode implements FileSystemNode {
     private final int size;
     private final String name;
 

@@ -33,13 +33,16 @@ public class DirectoryNodeTest {
     void directory_add_child() {
         DirectoryNode directory = new DirectoryNode("name");
 
-        FileNode firstFile = new FileNode("first", 1);
+        FileSystemNode firstFile = new FileNode("first", 1);
         directory.add(firstFile);
         assertEquals(directory.getChildren().size(), 1);
 
-
-        FileNode secondFile = new FileNode("second", 1);
+        FileSystemNode secondFile = new FileNode("second", 1);
         directory.add(secondFile);
         assertEquals(directory.getChildren().size(), 2);
+
+        FileSystemNode secondDirectory = new DirectoryNode("second");
+        directory.add(secondDirectory);
+        assertEquals(directory.getChildren().size(), 3);
     }
 }

@@ -3,9 +3,9 @@ package com.tdd.domain.filesystem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DirectoryNode {
+public class DirectoryNode implements FileSystemNode {
     private final String name;
-    private List<FileNode> children = new ArrayList<>();
+    private final List<FileSystemNode> children = new ArrayList<>();
 
     public DirectoryNode(String name) {
         StringValidator.validate(name);
@@ -17,11 +17,11 @@ public class DirectoryNode {
         return this.name;
     }
 
-    public List<FileNode> getChildren() {
+    public List<FileSystemNode> getChildren() {
         return this.children;
     }
 
-    public void add(FileNode node) {
+    public void add(FileSystemNode node) {
         this.children.add(node);
     }
 }

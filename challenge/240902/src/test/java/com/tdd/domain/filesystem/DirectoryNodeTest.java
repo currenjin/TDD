@@ -21,4 +21,25 @@ public class DirectoryNodeTest {
         assertThrows(IllegalArgumentException.class, () -> new DirectoryNode(""));
         assertThrows(IllegalArgumentException.class, () -> new DirectoryNode(" "));
     }
+
+    @Test
+    void directory_has_children() {
+        DirectoryNode node = new DirectoryNode("name");
+
+        assertEquals(node.getChildren().size(), 0);
+    }
+
+    @Test
+    void directory_add_child() {
+        DirectoryNode directory = new DirectoryNode("name");
+
+        FileNode firstFile = new FileNode("first", 1);
+        directory.add(firstFile);
+        assertEquals(directory.getChildren().size(), 1);
+
+
+        FileNode secondFile = new FileNode("second", 1);
+        directory.add(secondFile);
+        assertEquals(directory.getChildren().size(), 2);
+    }
 }

@@ -1,18 +1,12 @@
 package com.tdd.domain.filesystem;
 
-public class FileNode {
-    private final int size;
+public class DirectoryNode {
     private final String name;
 
-    public FileNode(String name, int size) {
+    public DirectoryNode(String name) {
         StringValidator.validate(name);
 
         this.name = name;
-        this.size = size;
-    }
-
-    public int getSize() {
-        return this.size;
     }
 
     public String getName() {

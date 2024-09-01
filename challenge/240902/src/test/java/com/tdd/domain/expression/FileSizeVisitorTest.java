@@ -34,4 +34,31 @@ class FileSizeVisitorTest {
 
         assertEquals(3, size);
     }
+
+    @Test
+    void directory_has_both_directory() {
+        FileNode firstNode = new FileNode("first", 1);
+        FileNode secondNode = new FileNode("second", 2);
+
+        DirectoryNode firstDirectory = new DirectoryNode("firstDirectory");
+        firstDirectory.add(firstNode);
+        firstDirectory.add(secondNode);
+
+        DirectoryNode secondDirectory = new DirectoryNode("secondDirectory");
+        secondDirectory.add(firstNode);
+        secondDirectory.add(secondNode);
+
+        DirectoryNode thirdDirectory = new DirectoryNode("thirdDirectory");
+        thirdDirectory.add(firstNode);
+        thirdDirectory.add(secondNode);
+
+        DirectoryNode rootDirectory = new DirectoryNode("root");
+        rootDirectory.add(firstDirectory);
+        rootDirectory.add(secondDirectory);
+        rootDirectory.add(thirdDirectory);
+
+        int size = rootDirectory.accept(visitor);
+
+        assertEquals(9, size);
+    }
 }

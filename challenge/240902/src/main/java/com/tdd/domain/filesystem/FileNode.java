@@ -1,5 +1,7 @@
 package com.tdd.domain.filesystem;
 
+import com.tdd.domain.expression.FileSizeVisitor;
+
 public class FileNode implements FileSystemNode {
     private final int size;
     private final String name;
@@ -17,5 +19,9 @@ public class FileNode implements FileSystemNode {
 
     public String getName() {
         return this.name;
+    }
+
+    public int accept(FileSizeVisitor visitor) {
+        return visitor.visit(this);
     }
 }

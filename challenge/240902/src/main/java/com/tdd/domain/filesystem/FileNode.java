@@ -21,6 +21,7 @@ public class FileNode implements FileSystemNode {
         return this.name;
     }
 
+    @Override
     public int accept(FileSizeVisitor visitor) {
         return visitor.visit(this);
     }

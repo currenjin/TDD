@@ -1,5 +1,7 @@
 package com.tdd.domain.filesystem;
 
+import com.tdd.domain.expression.FileSizeVisitor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,5 +25,10 @@ public class DirectoryNode implements FileSystemNode {
 
     public void add(FileSystemNode node) {
         this.children.add(node);
+    }
+
+    @Override
+    public int accept(FileSizeVisitor visitor) {
+        return visitor.visit(this);
     }
 }

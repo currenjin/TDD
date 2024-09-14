@@ -15,6 +15,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DisplayName("POST /api/consumer/signup")
 public class ConsumerControllerAutoParamsTest {
+    String path = "/api/consumer/signup";
+
     @Autowired
     private TestRestTemplate client;
 
@@ -29,8 +31,6 @@ public class ConsumerControllerAutoParamsTest {
     @ParameterizedTest
     @AutoSource
     void 올바른_정보를_사용해_요청하면_성공_상태코드를_반환한다(Signup signup) {
-        String path = "/api/consumer/signup";
-
         ResponseEntity<Void> response = client.postForEntity(path, signup, Void.class);
 
         assertEquals(204, response.getStatusCodeValue());
@@ -39,7 +39,6 @@ public class ConsumerControllerAutoParamsTest {
     @ParameterizedTest
     @AutoSource
     void 존재하는_이메일_주소로_요청하면_400_코드를_반환한다(Signup signup, String otherPassword) {
-        String path = "/api/consumer/signup";
         client.postForEntity(path, signup, Void.class);
 
         ResponseEntity<Void> response = client.postForEntity(

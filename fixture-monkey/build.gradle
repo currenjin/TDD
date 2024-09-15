@@ -29,6 +29,7 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'com.navercorp.fixturemonkey:fixture-monkey-starter:1.0.25'
 }
 
 tasks.named('test') {

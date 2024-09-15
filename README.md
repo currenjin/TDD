@@ -19,6 +19,12 @@
 ### Java racingcar playground
 자동차 경주 게임을 TDD 로 구현한 프로젝트입니다.
 
+### AutoParams
+autoparams 사용 예제를 TDD 로 구현한 프로젝트입니다.
+
+### FixtureMonkey
+fixture monkey 사용 예제를 TDD 로 구현한 프로젝트입니다.
+
 ### Specification
 Specification pattern 을 TDD 로 구현한 프로젝트입니다.
 

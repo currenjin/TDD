@@ -1,6 +1,7 @@
 package com.tdd.domain.user;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -18,6 +19,14 @@ public class User {
         this.createdAt = new Date();
     }
 
+    public User(String firstName, String lastName, String emailAddress, String address, String detailAddress, String phoneNumber, LocalDate birthDate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+        this.active = true;
+        this.createdAt = new Date();
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -25,8 +34,6 @@ public class User {
     private String firstName;
 
     private String lastName;
-
-    private int age;
 
     private boolean active;
 
@@ -46,10 +53,6 @@ public class User {
 
     public String getLastName() {
         return lastName;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     public boolean isActive() {

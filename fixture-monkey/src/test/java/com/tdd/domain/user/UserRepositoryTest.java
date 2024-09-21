@@ -21,8 +21,8 @@ class UserRepositoryTest {
             .objectIntrospector(FieldReflectionArbitraryIntrospector.INSTANCE)
             .register(User.class, arbitraryBuilder ->
                     arbitraryBuilder.giveMeBuilder(String.class)
-                            .set("firstName", new MonkeyStringArbitrary().alpha())
-                            .set("lastName", new MonkeyStringArbitrary().alpha())
+                            .set("firstName", new MonkeyStringArbitrary().withCharRange('가', '힣'))
+                            .set("lastName", new MonkeyStringArbitrary().withCharRange('가', '힣'))
             )
             .build();
 
@@ -33,10 +33,12 @@ class UserRepositoryTest {
     private UserRepository repository;
 
     private List<User> userList;
+    private User firstUser;
 
     @BeforeEach
     void setUp() {
         userList = fixtureMonkey.giveMe(User.class, 5);
+        firstUser = fixtureMonkey.giveMeOne(User.class);
     }
 
     @Test
@@ -47,5 +49,15 @@ class UserRepositoryTest {
         repository.saveAll(userList);
 
         assertEquals(before + 5L, query.getSingleResult());
+    }
+
+    @Test
+    void creation_korean() {
+        Query query = em.createQuery("select count(u) from User u");
+        Long before = (Long) query.getSingleResult();
+
+        repository.save(firstUser);
+
+        assertEquals(before + 1L, query.getSingleResult());
     }
 }

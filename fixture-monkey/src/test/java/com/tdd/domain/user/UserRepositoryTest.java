@@ -32,28 +32,19 @@ class UserRepositoryTest {
     @Autowired
     private UserRepository repository;
 
-    private User firstUser;
-    private User secondUser;
-    private User thirdUser;
-    private User fourthUser;
-    private User fifthUser;
+    private List<User> userList;
 
     @BeforeEach
     void setUp() {
-        firstUser = fixtureMonkey.giveMeOne(User.class);
-        secondUser = fixtureMonkey.giveMeOne(User.class);
-        thirdUser = fixtureMonkey.giveMeOne(User.class);
-        fourthUser = fixtureMonkey.giveMeOne(User.class);
-        fifthUser = fixtureMonkey.giveMeOne(User.class);
+        userList = fixtureMonkey.giveMe(User.class, 5);
     }
 
     @Test
     void creation() {
         Query query = em.createQuery("select count(u) from User u");
         Long before = (Long) query.getSingleResult();
-        List<User> users = List.of(firstUser, secondUser, thirdUser, fourthUser, fifthUser);
 
-        repository.saveAll(users);
+        repository.saveAll(userList);
 
         assertEquals(before + 5L, query.getSingleResult());
     }

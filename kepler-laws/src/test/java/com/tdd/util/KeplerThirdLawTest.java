@@ -17,4 +17,15 @@ class KeplerThirdLawTest {
 
         assertEquals(expectedPeriod, actualPeriod, DELTA);
     }
+
+    @Test
+    public void testCalculateOrbitalPeriodMars() {
+        double semiMajorAxis = 1.52;
+        double centralMass = 1.0;
+        double expectedPeriod = 1.88;
+
+        double actualPeriod = KeplerThirdLaw.calculateOrbitalPeriod(semiMajorAxis, centralMass);
+
+        assertEquals(expectedPeriod, actualPeriod, DELTA);
+    }
 }

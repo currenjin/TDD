@@ -8,6 +8,8 @@ public class KeplerThirdLaw {
 
     // 케플러의 제 3법칙: T^2 = (4π^2 / GM) * a^3
     public static double calculateOrbitalPeriod(double semiMajorAxis, double centralMass) {
+        validate(semiMajorAxis, centralMass);
+
         double a = semiMajorAxis * AU;
         double m = centralMass * SOLAR_MASS;
 
@@ -15,5 +17,15 @@ public class KeplerThirdLaw {
         double periodSeconds = Math.sqrt(periodSquared);
 
         return periodSeconds / EARTH_YEAR_SECONDS; // 지구년 단위로 변환
+    }
+
+    private static void validate(double semiMajorAxis, double centralMass) {
+        if (semiMajorAxis <= 0.0) {
+            throw new IllegalArgumentException("The semi-major axis must be greater than 0.");
+        }
+
+        if (centralMass <= 0.0) {
+            throw new IllegalArgumentException("The central mass must be greater than 0.");
+        }
     }
 }

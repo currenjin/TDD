@@ -1,6 +1,7 @@
 package com.tdd.util;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -67,5 +68,13 @@ class KeplerThirdLawTest {
         double actualPeriod = KeplerThirdLaw.calculateOrbitalPeriod(semiMajorAxis, CENTRAL_MASS);
 
         assertEquals(expectedPeriod, actualPeriod, DELTA);
+    }
+
+    @Test
+    public void testInvalidInputs() {
+        assertThrows(IllegalArgumentException.class, () -> KeplerThirdLaw.calculateOrbitalPeriod(-1, 1));
+        assertThrows(IllegalArgumentException.class, () -> KeplerThirdLaw.calculateOrbitalPeriod(1, -1));
+        assertThrows(IllegalArgumentException.class, () -> KeplerThirdLaw.calculateOrbitalPeriod(0, 1));
+        assertThrows(IllegalArgumentException.class, () -> KeplerThirdLaw.calculateOrbitalPeriod(1, 0));
     }
 }

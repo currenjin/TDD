@@ -1,4 +1,4 @@
-package rent_company;
+package rentcompany;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 

@@ -1,4 +1,8 @@
-package car;
+package car.model;
+
+import car.Car;
+import car.CarName;
+import car.KmPerLiter;
 
 public class Sonata extends Car {
 	public Sonata(int distance) {

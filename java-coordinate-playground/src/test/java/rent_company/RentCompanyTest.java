@@ -4,9 +4,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-import car.Avante;
-import car.K5;
-import car.Sonata;
+import car.model.Avante;
+import car.model.K5;
+import car.model.Sonata;
 
 public class RentCompanyTest {
 	private static final String NEWLINE = System.lineSeparator();

@@ -1,8 +1,8 @@
 package car.model;
 
 import car.Car;
-import car.CarName;
-import car.KmPerLiter;
+import car.attribute.CarName;
+import car.attribute.KmPerLiter;
 
 public class Avante extends Car {
 	public Avante(int distance) {

@@ -1,4 +1,4 @@
-package car;
+package car.attribute;
 
 public enum KmPerLiter {
 	SONATA(10),

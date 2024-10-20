@@ -1,7 +1,9 @@
 package car;
 
+import static car.CarName.SONATA;
+
 public class Sonata extends Car {
 	public Sonata(int distance) {
-		super("Sonata", distance, 10);
+		super(SONATA.getName(), distance, 10);
 	}
 }

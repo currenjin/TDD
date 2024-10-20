@@ -19,6 +19,9 @@
 ### Java racingcar playground
 자동차 경주 게임을 TDD 로 구현한 프로젝트입니다.
 
+### Java coordinate playground
+좌표 계산기를 TDD 로 구현한 프로젝트입니다.
+
 ### AutoParams
 autoparams 사용 예제를 TDD 로 구현한 프로젝트입니다.
 

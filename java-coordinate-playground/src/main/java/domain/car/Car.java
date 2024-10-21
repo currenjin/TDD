@@ -1,6 +1,6 @@
 package domain.car;
 
-public class Car {
+public abstract class Car {
 	private final String name;
 	private final int distance;
 	private final int kmPerLiter;

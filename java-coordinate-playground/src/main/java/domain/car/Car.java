@@ -12,6 +12,10 @@ public abstract class Car {
 	}
 
 	public String getReport() {
-		return String.format("%s : %s리터", name, (distance / kmPerLiter));
+		return String.format("%s : %s리터", name, calculateChargeQuantity());
+	}
+
+	private int calculateChargeQuantity() {
+		return distance / kmPerLiter;
 	}
 }

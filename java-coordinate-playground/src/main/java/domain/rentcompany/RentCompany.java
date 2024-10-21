@@ -20,7 +20,7 @@ public class RentCompany {
 		StringBuilder report = new StringBuilder();
 
 		this.cars.forEach(car -> report
-			.append(car.getReport())
+			.append(car.getTripDistance())
 			.append("\n"));
 
 		return report.toString();

@@ -11,7 +11,7 @@ public abstract class Car {
 		this.kmPerLiter = kmPerLiter;
 	}
 
-	public String getReport() {
+	public String getTripDistance() {
 		return String.format("%s : %s리터", name, calculateChargeQuantity());
 	}
 

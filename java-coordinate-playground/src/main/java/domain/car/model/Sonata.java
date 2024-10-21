@@ -1,8 +1,8 @@
-package car.model;
+package domain.car.model;
 
-import car.Car;
-import car.attribute.CarName;
-import car.attribute.KmPerLiter;
+import domain.car.Car;
+import domain.car.attribute.CarName;
+import domain.car.attribute.KmPerLiter;
 
 public class Sonata extends Car {
 	public Sonata(int distance) {

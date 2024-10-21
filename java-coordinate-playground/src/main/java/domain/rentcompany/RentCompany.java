@@ -1,9 +1,9 @@
-package rentcompany;
+package domain.rentcompany;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import car.Car;
+import domain.car.Car;
 
 public class RentCompany {
 	private final List<Car> cars = new ArrayList<>();

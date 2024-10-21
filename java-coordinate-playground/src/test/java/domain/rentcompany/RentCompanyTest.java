@@ -1,12 +1,13 @@
-package rentcompany;
+package domain.rentcompany;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-import car.model.Avante;
-import car.model.K5;
-import car.model.Sonata;
+import domain.car.model.Avante;
+import domain.car.model.K5;
+import domain.car.model.Sonata;
+import domain.rentcompany.RentCompany;
 
 public class RentCompanyTest {
 	private static final String NEWLINE = System.lineSeparator();

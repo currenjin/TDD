@@ -2,6 +2,8 @@ package com.tdd.domain.post;
 
 import com.navercorp.fixturemonkey.FixtureMonkey;
 import com.navercorp.fixturemonkey.api.introspector.FieldReflectionArbitraryIntrospector;
+import com.tdd.domain.comment.Comment;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -32,15 +35,48 @@ class PostRepositoryTest {
 
     private Post post;
 
+    private Comment comment;
+
     @BeforeEach
     void setUp() {
         post = fixtureMonkey.giveMeOne(Post.class);
+    }
+
+    @AfterEach
+    void tearDown() {
+        em.clear();
     }
 
     @Test
     void creation() {
         Query query = em.createQuery("select count(p) from Post p");
         Long before = (Long) query.getSingleResult();
+
+        repository.save(post);
+
+        assertEquals(before + 1L, query.getSingleResult());
+    }
+
+    @Test
+    void creation_with_comment() {
+        Query query = em.createQuery("select count(p) from Post p");
+        Long before = (Long) query.getSingleResult();
+
+        comment = fixtureMonkey.giveMeOne(Comment.class);
+        post.addComment(comment);
+
+        repository.save(post);
+
+        assertEquals(before + 1L, query.getSingleResult());
+    }
+
+    @Test
+    void creation_with_many_comment() {
+        Query query = em.createQuery("select count(p) from Post p");
+        Long before = (Long) query.getSingleResult();
+
+        List<Comment> comments = fixtureMonkey.giveMe(Comment.class, 5);
+        comments.forEach(comment -> post.addComment(comment));
 
         repository.save(post);
 

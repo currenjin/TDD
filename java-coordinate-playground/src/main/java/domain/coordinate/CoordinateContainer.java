@@ -13,7 +13,7 @@ public class CoordinateContainer {
 
 	public void addCoordinate(Coordinate coordinate) {
 		if (getCoordinateSize() >= this.maxSize) {
-			throw new IllegalStateException("Maximum coordinate size exceeded");
+			throw new IllegalStateException("Maximum coordinate size exceeded. Max coordinate size is " + this.maxSize);
 		}
 
 		this.coordinates.add(coordinate);

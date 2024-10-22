@@ -20,7 +20,7 @@ public class RentCompany {
 		StringBuilder report = new StringBuilder();
 
 		this.cars.forEach(car -> report
-			.append(car.getFuelEfficiency())
+			.append(String.format("%s : %s리터", car.getName(), car.getFuelEfficiency()))
 			.append("\n"));
 
 		return report.toString();

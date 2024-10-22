@@ -82,4 +82,15 @@ class PostRepositoryTest {
 
         assertEquals(before + 1L, query.getSingleResult());
     }
+
+    @Test
+    void many_creation() {
+        Query query = em.createQuery("select count(p) from Post p");
+        Long before = (Long) query.getSingleResult();
+        List<Post> posts = fixtureMonkey.giveMe(Post.class, 5);
+
+        repository.saveAll(posts);
+
+        assertEquals(before + 5L, query.getSingleResult());
+    }
 }

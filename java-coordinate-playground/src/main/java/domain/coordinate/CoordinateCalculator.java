@@ -1,7 +1,7 @@
 package domain.coordinate;
 
 public class CoordinateCalculator {
-    public static double calculateDistance(Coordinate firstCoordinate, Coordinate secondCoordinate) {
+    public static double calculateLineDistance(Coordinate firstCoordinate, Coordinate secondCoordinate) {
         double firstTerm = getPow(firstCoordinate.getX() - secondCoordinate.getX());
         double secondTerm = getPow(firstCoordinate.getY() - secondCoordinate.getY());
 

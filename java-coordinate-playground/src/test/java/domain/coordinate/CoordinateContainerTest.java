@@ -55,7 +55,7 @@ class CoordinateContainerTest {
 	}
 
 	@Test
-	void getCoordinates() {
+	void printCoordinates() {
 		CoordinateContainer coordinateContainer = new CoordinateContainer(MAX_SIZE);
 		coordinateContainer.addCoordinate(coordinate);
 		coordinateContainer.addCoordinate(coordinate);

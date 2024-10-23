@@ -9,7 +9,7 @@ class CoordinateContainerTest {
 	private final int MAX_SIZE = 2;
 	private final double X = 0.0;
 	private final double Y = 1.1;
-	private final Coordinate coordinate = new Coordinate(X, Y);
+	private final Coordinate coordinate = Coordinates.of(X, Y);
 
 	@Test
 	void creation() {

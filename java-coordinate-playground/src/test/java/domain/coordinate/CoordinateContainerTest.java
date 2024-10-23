@@ -53,4 +53,17 @@ class CoordinateContainerTest {
 		assertThatThrownBy(() -> coordinateContainer.addCoordinate(coordinate))
 			.hasMessageContaining("Maximum coordinate size exceeded");
 	}
+
+	@Test
+	void getCoordinates() {
+		CoordinateContainer coordinateContainer = new CoordinateContainer(MAX_SIZE);
+		coordinateContainer.addCoordinate(coordinate);
+		coordinateContainer.addCoordinate(coordinate);
+
+		String actual = coordinateContainer.printCoordinates();
+
+		assertThat(actual).isEqualTo(
+				String.format("%s-%s", coordinate.print(), coordinate.print())
+		);
+	}
 }

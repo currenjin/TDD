@@ -2,6 +2,7 @@ package domain.coordinate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CoordinateContainer {
 	private final List<Coordinate> coordinates = new ArrayList<>();
@@ -25,5 +26,12 @@ public class CoordinateContainer {
 
 	public int getMaxSize() {
 		return this.maxSize;
+	}
+
+	public String printCoordinates() {
+		return this.coordinates
+				.stream()
+				.map(Coordinate::print)
+				.collect(Collectors.joining("-"));
 	}
 }

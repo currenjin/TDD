@@ -16,4 +16,8 @@ public class Coordinate {
 	public double getY() {
 		return this.y;
 	}
+
+	public String print() {
+		return String.format("(%s,%s)", this.x, this.y);
+	}
 }
